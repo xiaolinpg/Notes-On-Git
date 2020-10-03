@@ -1,2 +1,2 @@
-# test
-just for a halo world
+# Notes Repo
+This is a notes repo.
