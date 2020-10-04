@@ -1,4 +1,4 @@
-## 飞狐浏览器 Filfox 为广大 Filecoin 矿工提供国内种子节点服务
+### 一、 飞狐浏览器 Filfox 为广大 Filecoin 矿工提供国内种子节点服务
 1. 「推荐」直接写入 bootstrapper.pi 文件并编译；
 
 飞狐浏览器 Filfox 为广大 Filecoin 矿工提供国内种子节点服务
