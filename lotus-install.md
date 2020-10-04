@@ -25,8 +25,10 @@
 2020-10-04T06:42:30.285Z	ERROR	statetree	state/statetree.go:157	loading hamt node bafy2bzacecfmk3z2wfwfi3yg6bsrub4sj6sc5feljgs5g33ptztevmjbt4yes failed: failed to load hamt node: blockstore: block not found
 ```
 10. lotus sync status :（虽然存在上诉错误但节点程序似乎可以正常执行）
-	Error: chain contained block marked previously as bad ([bafy2bzaceat2rbuw4glgybvjnsyl2nh2dxg2j4dxtpfpom4kgi2umrrapbdai], bafy2bzacecednjpfr7xuk73s7tim7qn3nhdk444bmtqxpai6ueukwwlf4jgq4) (reason: failed to compute lookback tipset state: making vm: failed to load hamt node: blockstore: block not found)
-	**Slack Channel中提供的一些信息：*
+```
+Error: chain contained block marked previously as bad ([bafy2bzaceat2rbuw4glgybvjnsyl2nh2dxg2j4dxtpfpom4kgi2umrrapbdai], bafy2bzacecednjpfr7xuk73s7tim7qn3nhdk444bmtqxpai6ueukwwlf4jgq4) (reason: failed to compute lookback tipset state: making vm: failed to load hamt node: blockstore: block not found)
+```
+**Slack Channel中提供的一些信息：**
 ```
 @Zhao KK  3 days ago
 before i export with 'lotus chain export snapshot.car' in a working lotus repo with full synced with lotus 0.8.0, when i import, 'block not found' happens. which version of lotus should i use to export ?
