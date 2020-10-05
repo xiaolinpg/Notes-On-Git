@@ -15,3 +15,33 @@ https://filecoinproject.slack.com/archives/C0179RNEMU4/p1601891209040000?thread_
 ### 三、石榴对减少掉算力问题的技术分析
 https://mp.weixin.qq.com/s/X_8LcyMj34gXSPBi9fmGlQ
 
+### 四、linux运维常用工具集锦
+运维工程师使用的运维平台和工具包括：
+Web服务器：apache、tomcat、nginx、lighttpd
+
+监控：nagios、ganglia、cacti、zabbix
+
+自动部署：**ansible**、sshpt、salt
+
+配置管理：puppet、cfengine
+
+负载均衡：lvs、haproxy、nginx
+
+传输工具：scribe、flume
+
+备份工具：rsync、wget
+
+数据库：mysql、oracle、sqlserver
+
+分布式平台：hdfs、mapreduce、spark、storm、hive
+
+分布式数据库：hbase、cassandra、redis、MongoDB
+
+容器：lxc、docker
+
+虚拟化：openstack、xen、kvm
+
+安全：kerberos、selinux、acl、iptables
+
+问题追查：netstat、top、tcpdump、last
+
