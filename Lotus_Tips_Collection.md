@@ -11,3 +11,7 @@ lotus net connect /dns4/bootstrap2.testnet.filfox.info/tcp/16666/p2p/12D3KooWKth
 ```
 ### 二、关于钱包gas fee设置的讨论
 https://filecoinproject.slack.com/archives/C0179RNEMU4/p1601891209040000?thread_ts=1601891209.040000&cid=C0179RNEMU4
+
+### 三、石榴对减少掉算力问题的技术分析
+https://mp.weixin.qq.com/s/X_8LcyMj34gXSPBi9fmGlQ
+
