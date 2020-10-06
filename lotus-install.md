@@ -40,3 +40,39 @@ what is important is:
 - you supplied the --tipset flag with a certain step-back ( at least 10 tipsets )
 - ideally you just carry over finality stateroots as above
 ```
+11. 下载了官方的压缩版 car文件，可以正常同步了
+12. 一些notes：
+- Some newer CPU architectures like AMD's Zen and Intel's Ice Lake, have support for SHA extensions. Having these extensions enabled significantly speeds up your Lotus node. To make full use of your processor's capabilities, make sure you set the following variables before building from source:
+```
+export RUSTFLAGS="-C target-cpu=native -g"
+export FFI_BUILD_FROM_SOURCE=1
+```
+- Lotus provides generic Systemd service files. They can be installed with:
+```
+make install-daemon-service
+make install-miner-service
+```
+#### WARNING ####
+
+Provided service files should be inspected and edited according to user needs as they are very generic and may lack specific environment variabes and settings needed by the users.
+
+One example is that logs are redirected to files in /var/log/lotus by default and not visible in journalctl.
+- china tips
+** Speed up proof parameter download for first boot **
+```
+export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
+```
+** Speed up Go module download during builds **
+```
+export GOPROXY=https://goproxy.cn
+```
+- 飞狐浏览器 Filfox 为广大 Filecoin 矿工提供国内种子节点服务
+```
+/dns4/bootstrap1.testnet.filfox.info/tcp/16666/p2p/12D3KooW9uSxsSh3qwAPxSwwRDVqTTPg8HTBthujVYFXy7Dizb6Q
+/dns4/bootstrap2.testnet.filfox.info/tcp/16666/p2p/12D3KooWKths1fzziHsmeMdTdV7dgB9DzoeiGVSwcW2HCygztH9e
+```
+13. 按照上面tips，决定重新编译lotus 。 首先为了方便，生成一对密钥给服务器实现免密登陆
+```
+cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+```
+
