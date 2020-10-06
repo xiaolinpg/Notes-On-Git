@@ -67,6 +67,7 @@ export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
 export GOPROXY=https://goproxy.cn
 ```
 - 飞狐浏览器 Filfox 为广大 Filecoin 矿工提供国内种子节点服务
+「推荐」直接写入 bootstrapper.pi 文件并编译：
 ```
 /dns4/bootstrap1.testnet.filfox.info/tcp/16666/p2p/12D3KooW9uSxsSh3qwAPxSwwRDVqTTPg8HTBthujVYFXy7Dizb6Q
 /dns4/bootstrap2.testnet.filfox.info/tcp/16666/p2p/12D3KooWKths1fzziHsmeMdTdV7dgB9DzoeiGVSwcW2HCygztH9e
