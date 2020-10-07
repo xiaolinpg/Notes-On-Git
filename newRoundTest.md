@@ -105,3 +105,4 @@ echo '/dev/md101 /mnt/md101 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc
 > At the other extreme in terms of use cases would be running a database in which the amount of data read on each operation is small, say, up to 4 KB. Here you want a single I/O to be dealt with by one drive with one seek action rather than be spilt between more than one drive and multiple seeks. So, for use cases such as databases and email servers, you should go for a bigger RAID chunk size, say, 64 KB or larger.
 
 3. 调整了一下，把md0 挂载到了 /root目录，原来的/root目录改成 /root_tmp，并把所有文件拷贝进新的root目录<br>
+	这样.lotus文件夹就放在新的md0阵列上
