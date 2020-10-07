@@ -106,3 +106,120 @@ echo '/dev/md101 /mnt/md101 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc
 
 3. 调整了一下，把md0 挂载到了 /root目录，原来的/root目录改成 /root_tmp，并把所有文件拷贝进新的root目录<br>
 	这样.lotus文件夹就放在新的md0阵列上
+
+##Game Starting
+
+```
+Variables common to most Lotus binaries:
+
+    LOTUS_FD_MAX: Sets the file descriptor limit for the process
+    LOTUS_JAEGER: Sets the Jaeger URL to send traces. See TODO.
+    LOTUS_DEV: Any non-empty value will enable more verbose logging, useful only for developers.
+    GOLOG_OUTPUT: Controls where the program logs. Possible values: stdout, stderr, file. Multiple values can be combined with '+'.
+    GOLOG_FILE: Path to file to log to.
+    GOLOG_LOG_FMT: Logging format (json, nocolor).
+```
+```
+Variables specific to the Lotus daemon:
+    LOTUS_PATH: Location to store Lotus data (defaults to ~/.lotus).
+    LOTUS_SKIP_GENESIS_CHECK=_yes_: Set only if you wish to run a lotus network with a different genesis block.
+    LOTUS_CHAIN_TIPSET_CACHE: Sets the size for the chainstore tipset cache. Defaults to 8192. Increase if you perform frequent arbitrary tipset lookups.
+    LOTUS_CHAIN_INDEX_CACHE: Sets the size for the epoch index cache. Defaults to 32768. Increase if you perform frequent deep chain lookups for block heights far from the latest height.
+    LOTUS_BSYNC_MSG_WINDOW: Sets the initial maximum window size for message fetching blocksync request. Set to 10-20 if you have an internet connection with low bandwidth
+```
+修改env（编辑/etc/profile文件）：
+
+```
+root@worker812:~/lotus# env
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+SSH_CONNECTION=111.203.200.194 4511 172.28.8.12 22
+LESSCLOSE=/usr/bin/lesspipe %s %s
+LANG=en_US.UTF-8
+IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
+RUST_LOG=Trace
+OLDPWD=/root/lotus/build
+GOPROXY=https://goproxy.cn
+FFI_BUILD_FROM_SOURCE=1
+XDG_SESSION_ID=2
+USER=root
+FIL_PROOFS_USE_GPU_COLUMN_BUILDER=1
+FIL_PROOFS_USE_GPU_TREE_BUILDER=1
+PWD=/root/lotus
+HOME=/root
+SSH_CLIENT=111.203.200.194 4511 22
+FIL_PROOFS_PARENT_CACHE=/mnt/md102/parent_proof
+XDG_DATA_DIRS=/usr/local/share:/usr/share:/var/lib/snapd/desktop
+FIL_PROOFS_USE_MULTICORE_SDR=1
+BELLMAN_CPU_UTILIZATION=0.875
+TMPDIR=/mnt/md101/TMPDIR
+WORKER_PATH=/root/.lotusworker
+LOTUS_PATH=/root/.lotus
+FIL_PROOFS_MAXIMIZE_CACHING=1
+SSH_TTY=/dev/pts/0
+MAIL=/var/mail/root
+TERM=xterm-256color
+SHELL=/bin/bash
+LOTUS_MINER_PATH=/root/.miner_storage
+SHLVL=1
+LOGNAME=root
+XDG_RUNTIME_DIR=/run/user/0
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/.cargo/bin:/usr/local/mfs/sbin:/usr/local/mfs/bin
+FIL_PROOFS_PARAMETER_CACHE=/mnt/md101/para_proof
+RUSTFLAGS=-C target-cpu=native -g
+LESSOPEN=| /usr/bin/lesspipe %s
+_=/usr/bin/env
+```
+####make install-daemon-service
+```
+make install-daemon-service
+make install-miner-service
+```
+output:
+```
+root@worker812:~/lotus# make install-daemon-service
+go: creating work dir: stat /mnt/md101/TMPDIR: no such file or directory
+expr: syntax error
+install -C ./lotus /usr/local/bin/lotus
+mkdir -p /etc/systemd/system
+mkdir -p /var/log/lotus
+install -C -m 0644 ./scripts/lotus-daemon.service /etc/systemd/system/lotus-daemon.service
+systemctl daemon-reload
+
+lotus-daemon service installed. Don't forget to run 'sudo systemctl start lotus-daemon' to start it and 'sudo systemctl enable lotus-daemon' for it to be enabled on startup.
+```
+```
+root@worker812:~/lotus# make install-miner-service
+go: creating work dir: stat /mnt/md101/TMPDIR: no such file or directory
+expr: syntax error
+install -C ./lotus-miner /usr/local/bin/lotus-miner
+install -C ./lotus /usr/local/bin/lotus
+mkdir -p /etc/systemd/system
+mkdir -p /var/log/lotus
+install -C -m 0644 ./scripts/lotus-daemon.service /etc/systemd/system/lotus-daemon.service
+systemctl daemon-reload
+
+lotus-daemon service installed. Don't forget to run 'sudo systemctl start lotus-daemon' to start it and 'sudo systemctl enable lotus-daemon' for it to be enabled on startup.
+mkdir -p /etc/systemd/system
+mkdir -p /var/log/lotus
+install -C -m 0644 ./scripts/lotus-miner.service /etc/systemd/system/lotus-miner.service
+systemctl daemon-reload
+
+lotus-miner service installed. Don't forget to run 'sudo systemctl start lotus-miner' to start it and 'sudo systemctl enable lotus-miner' for it to be enabled on startup.
+```
+### wallets
+```
+root@worker812:~# lotus wallet list
+Address                                                                                 Balance  Nonce  Default  
+t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebtetq4td3couv6xxxj2eimletd42urb2q  0 FIL    0               
+t3uim6m7t4ushu2v4mxtphbdvvigjg6zcvh5f6zgmilepfd3k3wferik7is6g3ufriq3pp2zzwvlkzxxatawja  0 FIL    0      X        
+t3wlnfaftlfr6il7mt3fqjunq6dbn4bbq6qefwfxzqop2ub2mxzk6hp5sh27soqqmkdykttz7g2va4kpor4x3a  0 FIL    0               
+```
+First time run：
+```
+lotus-miner init --owner=<t3uim6m7t4ushu2v4mxtphbdvvigjg6zcvh5f6zgmilepfd3k3wferik7is6g3ufriq3pp2zzwvlkzxxatawja>  --worker=<t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebtetq4td3couv6xxxj2eimletd42urb2q> --no-local-storage
+```
+设置 --no-local-storage 后，设定miner目录<br>
+> https://docs.filecoin.io/mine/lotus/custom-storage-layout/#custom-location-for-sealing
+
+
+
