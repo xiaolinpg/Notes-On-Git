@@ -57,12 +57,12 @@ make install-miner-service
 Provided service files should be inspected and edited according to user needs as they are very generic and may lack specific environment variabes and settings needed by the users.
 
 One example is that logs are redirected to files in /var/log/lotus by default and not visible in journalctl.
-- china tips
-** Speed up proof parameter download for first boot **
+- china tips 
+**Speed up proof parameter download for first boot**
 ```
 export IPFS_GATEWAY=https://proof-parameters.s3.cn-south-1.jdcloud-oss.com/ipfs/
 ```
-** Speed up Go module download during builds **
+**Speed up Go module download during builds**
 ```
 export GOPROXY=https://goproxy.cn
 ```
