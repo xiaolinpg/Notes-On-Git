@@ -15,7 +15,7 @@
 >      31255577952 blocks super 1.2     
 > unused devices: <none>
 
-###操作：# <br>
+### 操作： <br>
 **参考材料：** [Ubuntu 上创建常用磁盘阵列](https://www.jianshu.com/p/9a458510593a)
 
 ```
@@ -107,7 +107,7 @@ echo '/dev/md101 /mnt/md101 ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc
 3. 调整了一下，把md0 挂载到了 /root目录，原来的/root目录改成 /root_tmp，并把所有文件拷贝进新的root目录<br>
 	这样.lotus文件夹就放在新的md0阵列上
 
-##Game Starting
+## Game Starting
 
 ```
 Variables common to most Lotus binaries:
@@ -169,7 +169,7 @@ RUSTFLAGS=-C target-cpu=native -g
 LESSOPEN=| /usr/bin/lesspipe %s
 _=/usr/bin/env
 ```
-####make install-daemon-service
+#### make install-daemon-service
 ```
 make install-daemon-service
 make install-miner-service
@@ -216,10 +216,12 @@ t3wlnfaftlfr6il7mt3fqjunq6dbn4bbq6qefwfxzqop2ub2mxzk6hp5sh27soqqmkdykttz7g2va4kp
 ```
 First time run：
 ```
-lotus-miner init --owner=<t3uim6m7t4ushu2v4mxtphbdvvigjg6zcvh5f6zgmilepfd3k3wferik7is6g3ufriq3pp2zzwvlkzxxatawja>  --worker=<t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebtetq4td3couv6xxxj2eimletd42urb2q> --no-local-storage
+lotus-miner init --owner=t3uim6m7t4ushu2v4mxtphbdvvigjg6zcvh5f6zgmilepfd3k3wferik7is6g3ufriq3pp2zzwvlkzxxatawja  --worker=t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebtetq4td3couv6xxxj2eimletd42urb2q --no-local-storage
 ```
 设置 --no-local-storage 后，设定miner目录<br>
 > https://docs.filecoin.io/mine/lotus/custom-storage-layout/#custom-location-for-sealing
 
+### TIPS
+**lotus-daemon 系统服务是好用的，前一次没好用可能是等待的时间不够长，还没有完全启动**
 
 
