@@ -216,12 +216,21 @@ t3wlnfaftlfr6il7mt3fqjunq6dbn4bbq6qefwfxzqop2ub2mxzk6hp5sh27soqqmkdykttz7g2va4kp
 ```
 First time run：
 ```
-lotus-miner init --owner=t3uim6m7t4ushu2v4mxtphbdvvigjg6zcvh5f6zgmilepfd3k3wferik7is6g3ufriq3pp2zzwvlkzxxatawja  --worker=t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebtetq4td3couv6xxxj2eimletd42urb2q --no-local-storage
+lotus-miner init --owner=t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebtetq4td3couv6xxxj2eimletd42urb2q --no-local-storage
 ```
+没有按照官方文档加 --worker 地址，因为没给发fil，没有gas可以烧（懒）<br>
 设置 --no-local-storage 后，设定miner目录<br>
 > https://docs.filecoin.io/mine/lotus/custom-storage-layout/#custom-location-for-sealing
 
 ### TIPS
 **lotus-daemon 系统服务是好用的，前一次没好用可能是等待的时间不够长，还没有完全启动**
+
+### Miner started
+```
+config.toml
+[Libp2p]
+  ListenAddresses = ["/ip4/0.0.0.0/tcp/24001"]
+  AnnounceAddresses = ["/ip4/61.155.145.133/tcp/24001"]
+```
 
 
