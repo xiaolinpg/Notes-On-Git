@@ -226,11 +226,12 @@ lotus-miner init --owner=t3u4qx7nwucpqlxjcl2y6bv7x2okfxqwobuu24ozxkvan4ljtxqcebt
 **lotus-daemon 系统服务是好用的，前一次没好用可能是等待的时间不够长，还没有完全启动**
 
 ### Miner started
+
 ```
 config.toml
 [Libp2p]
-  ListenAddresses = ["/ip4/0.0.0.0/tcp/24001"]
-  AnnounceAddresses = ["/ip4/61.155.145.133/tcp/24001"]
+  ListenAddresses = ["/ip4/0.0.0.0/tcp/8086"]
+  AnnounceAddresses = ["/ip4/61.155.145.133/tcp/8086"]
 ```
 
 
