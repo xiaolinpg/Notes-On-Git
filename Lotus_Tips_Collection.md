@@ -45,3 +45,25 @@ Web服务器：apache、tomcat、nginx、lighttpd
 
 问题追查：netstat、top、tcpdump、last
 
+### 五、
+Magik6k  20 days ago
+You can try it now too, but it's a bit tricky:
+
+    Add
+```
+[patch.crates-io]
+storage-proofs = { git = "https://github.com/filecoin-project/rust-fil-proofs" }
+filecoin-proofs = { git = "https://github.com/filecoin-project/rust-fil-proofs" }
+```
+At the bottom of extern/filecoin-ffi/rust/Cargo.toml
+```
+    FFI_BUILD_FROM_SOURCE=1 RUSTFLAGS='-C target-cpu=native' make clean all lotus-bench
+    Run with ... FIL_PROOFS_USE_MULTICORE_SDR=1 taskset -c 0,1,2 ./lotus-worker run ... 
+```
+(edited)
+
+Note that the worker has to be limited to one CCX / run on cores with shared L3 cache
+Magik6k  
+You can check that with hwloc-ls
+Magik6k 
+(This will be automatic when we release this feature, but currently you basically need dedicated PC1 workers to use that)
