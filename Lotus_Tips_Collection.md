@@ -85,5 +85,3 @@ EntropyPool/bellperson
 Language
 Rust
 Last updated
-22 days ago
-<https://github.com/EntropyPool/bellperson|EntropyPool/bellperson>EntropyPool/bellperson | Sep 24th | Added by GitHub
