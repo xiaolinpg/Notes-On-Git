@@ -73,17 +73,17 @@ Add the core count like:
 
 BELLMAN_CUSTOM_GPU="GeForce RTX 3080:12345"
 
-peace  20 minutes ago
-What does ":12345" do though? @stuberman
-stuberman  20 minutes ago
-Replace 12345 with the actual number of cores
-stuberman  19 minutes ago
-The standard GPUs are already set in bellperson with the amount of cores… for a custom GPU you have to tell it how many cores you have
-stuberman  16 minutes ago
-https://github.com/EntropyPool/bellperson
-EntropyPool/bellperson
-Language
-Rust
-Last updated
-22 days ago
+peace  20 minutes ago \n
+What does ":12345" do though? @stuberman\n
+stuberman  20 minutes ago\n
+Replace 12345 with the actual number of cores\n
+stuberman  19 minutes ago\n
+The standard GPUs are already set in bellperson with the amount of cores… for a custom GPU you have to tell it how many cores you have\n
+stuberman  16 minutes ago\n
+https://github.com/EntropyPool/bellperson \n
+EntropyPool/bellperson\n
+Language\n
+Rust\n
+Last updated\n
+22 days ago\n
 <https://github.com/EntropyPool/bellperson|EntropyPool/bellperson>EntropyPool/bellperson | Sep 24th | Added by GitHub
