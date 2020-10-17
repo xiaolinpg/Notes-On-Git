@@ -67,3 +67,23 @@ Magik6k
 You can check that with hwloc-ls
 Magik6k 
 (This will be automatic when we release this feature, but currently you basically need dedicated PC1 workers to use that)
+
+### 六、GPU 3080
+Add the core count like:
+
+BELLMAN_CUSTOM_GPU="GeForce RTX 3080:12345"
+
+peace  20 minutes ago
+What does ":12345" do though? @stuberman
+stuberman  20 minutes ago
+Replace 12345 with the actual number of cores
+stuberman  19 minutes ago
+The standard GPUs are already set in bellperson with the amount of cores… for a custom GPU you have to tell it how many cores you have
+stuberman  16 minutes ago
+https://github.com/EntropyPool/bellperson
+EntropyPool/bellperson
+Language
+Rust
+Last updated
+22 days ago
+<https://github.com/EntropyPool/bellperson|EntropyPool/bellperson>EntropyPool/bellperson | Sep 24th | Added by GitHub
